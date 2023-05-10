@@ -14,6 +14,6 @@ for (let i = 0; i <= str.length; i++) {
     : "";
 }
 
-console.log("Your word was", "[", str, "]", "and it has", sum, "vowels");
+console.log("Your word was [", str, "] and it has", sum, "vowels");
 
 console.log("----------------------------------------");
