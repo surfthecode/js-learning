@@ -282,20 +282,13 @@ const petAgeCalc = function (petType, petAge) {
 const funcSelector = function (selector) {
   selector = Number(
     prompt(`Chose an option from below: \n
-  1 - odd number? true or false\n
-  2 - calculate sum of 2 numbers multiplied by 0.1\n
-  3 - calculate the percentage of a number\n
-  4 - biggest of 3 numbers\n
-  5 - sum from 0 to a number\n
-  6 - prime number? true or false\n
-  7 - less or greater than 0\n
-  8 - even numbers between 2 numbers\n
-  9 - numbers in ascending order\n
-  10 - numbers in descending order\n
-  11 - multiplication table for a number\n
-  12 - how many free seats remaining at a table?\n
-  14 - age calculator\n
-  15 - pet age calculator`)
+  1 - odd number? true or false   |   2 - calculate sum of 2 numbers multiplied by 0.1 \n
+  3 - calculate the percentage of a number   |   4 - biggest of 3 numbers\n
+  5 - sum from 0 to a number   |   6 - prime number? true or false\n
+  7 - less or greater than 0   |   8 - even numbers between 2 numbers\n
+  9 - numbers in ascending order   |   10 - numbers in descending order\n
+  11 - multiplication table for a number   |   12 - how many free seats remaining at a table?\n
+  14 - age calculator   |   15 - pet age calculator`)
   );
   switch (selector) {
     case 1:
