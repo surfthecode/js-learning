@@ -223,10 +223,16 @@ const displayMultiplicationTable = function (num17) {
 /* ---------------------------------------------------------------------- */
 /*                     12. cate locuri libere la masa                     */
 /* ---------------------------------------------------------------------- */
-// Explanation needed
-// nr locuri la o masa
-// nr pers
-// nr mese
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -250,16 +256,25 @@ const calcBirthYear = function (birthYear) {
 /* --------------------------------------------------------------------- */
 /*                           15. calcul ani pet                          */
 /* --------------------------------------------------------------------- */
-// Explanation needed
-//
-//
-//
-//
-//
-//
-//
-//
-//
+const petAgeCalc = function (petType, petAge) {
+  petType = prompt("Is your pet a cat or a dog?");
+  petAge = Number(prompt("How old is your pet?"));
+
+  switch (petType) {
+    case "cat":
+      if (petAge <= 2) {
+        return console.log(`Your cat is ${(petAge * 12) / 6} years old`);
+      } else {
+        return console.log(`Your cat is ${(petAge - 2) * 4 + 24} years old`);
+      }
+      break;
+    case "dog":
+      return console.log(
+        `Your dogo is ${Math.floor(16 * Math.log(petAge) + 31)} years old`
+      );
+      break;
+  }
+};
 
 /* --------------------------------------------------------------------- */
 /*           13. functie care apeleaza toate celelalte functii           */
@@ -336,8 +351,8 @@ const funcSelector = function (selector) {
       calcBirthYear();
       break;
     case 15:
-      console.log("function name: ");
-      console.log(`Further explanantion needed`);
+      console.log("function name: petAgeCalc");
+      petAgeCalc();
       break;
   }
 };
