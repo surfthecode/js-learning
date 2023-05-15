@@ -25,7 +25,6 @@ const isEven = function (num1) {
 };
 
 // isEven();
-console.log("----------------------------------------");
 
 /* --------------------------------------------------------------------- */
 /*                  2. suma a 2 numere inmultita cu 0,1                  */
@@ -39,7 +38,6 @@ const calcSum = function (num2, num3) {
 };
 
 // calcSum();
-console.log("----------------------------------------");
 
 /* --------------------------------------------------------------------- */
 /*                   3. calcul procentaj dintr-un numar                  */
@@ -53,7 +51,6 @@ const calcPercent = function (num4, percentage) {
 };
 
 // calcPercent();
-console.log("----------------------------------------");
 
 /* --------------------------------------------------------------------- */
 /*                        4. biggest of 3 numbers                        */
@@ -73,7 +70,6 @@ const biggestOfThree = function (num5, num6, num7) {
 };
 
 // biggestOfThree();
-console.log("----------------------------------------");
 
 /* --------------------------------------------------------------------- */
 /*                      5. suma de la zero la numar                      */
@@ -91,7 +87,6 @@ const sumFromZeroToNumber = function (num8) {
 };
 
 // sumFromZeroToNumber();
-console.log("----------------------------------------");
 
 /* --------------------------------------------------------------------- */
 /*                     6. numar prim? true sau false                     */
@@ -100,7 +95,7 @@ function isPrime(num9) {
   num9 = Number(prompt("Type your number:"));
   let flag = true;
 
-  if (num9 < 1) {
+  if (num9 < 2) {
     return `${num9} is not a prime number.`;
   } else {
     for (let j = 2; j < num9; j++) {
@@ -118,7 +113,6 @@ function isPrime(num9) {
 }
 
 // console.log(isPrime());
-console.log("----------------------------------------");
 
 /* --------------------------------------------------------------------- */
 /*                    7. mai mare sau mai mic decat 0                    */
@@ -134,7 +128,6 @@ const compareToZero = function (num10) {
 };
 
 // compareToZero();
-console.log("----------------------------------------");
 
 /* --------------------------------------------------------------------- */
 /*               8. numere pare dintre 2 numere min si max               */
@@ -156,7 +149,6 @@ const displayEven = function (x, y) {
 };
 
 // displayEven();
-console.log("----------------------------------------");
 
 /* --------------------------------------------------------------------- */
 /*                     9. sir crescator din 3 numere                     */
@@ -186,7 +178,6 @@ const displayOrdered = function (num11, num12, num13) {
 };
 
 // displayOrdered();
-console.log("----------------------------------------");
 
 /* --------------------------------------------------------------------- */
 /*                   10. sir descrescator din 3 numere                   */
@@ -216,7 +207,6 @@ const displayReverseOrdered = function (num14, num15, num16) {
 };
 
 // displayReverseOrdered();
-console.log("----------------------------------------");
 
 /* ---------------------------------------------------------------------- */
 /*                  11. tabla inmultirii pentru un numar                  */
@@ -229,15 +219,14 @@ const displayMultiplicationTable = function (num17) {
 };
 
 // displayMultiplicationTable();
-console.log("----------------------------------------");
 
 /* ---------------------------------------------------------------------- */
 /*                     12. cate locuri libere la masa                     */
 /* ---------------------------------------------------------------------- */
 // Explanation needed
-//
-//
-//
+// nr locuri la o masa
+// nr pers
+// nr mese
 //
 //
 //
@@ -257,7 +246,6 @@ const calcBirthYear = function (birthYear) {
 };
 
 // calcBirthYear();
-console.log("----------------------------------------");
 
 /* --------------------------------------------------------------------- */
 /*                           15. calcul ani pet                          */
@@ -296,45 +284,59 @@ const funcSelector = function (selector) {
   );
   switch (selector) {
     case 1:
+      console.log("function name: isEven");
       isEven();
       break;
     case 2:
+      console.log("function name: calcSum");
       calcSum();
       break;
     case 3:
+      console.log("function name: calcPercent");
       calcPercent();
       break;
     case 4:
+      console.log("function name: biggestOfThree");
       biggestOfThree();
       break;
     case 5:
+      console.log("function name: sumFromZeroToNumber");
       sumFromZeroToNumber();
       break;
     case 6:
+      console.log("function name: isPrime");
       console.log(isPrime());
       break;
     case 7:
+      console.log("function name: compareToZero");
       compareToZero();
       break;
     case 8:
+      console.log("function name: displayEven");
       displayEven();
       break;
     case 9:
+      console.log("function name: displayOrdered");
       displayOrdered();
       break;
     case 10:
+      console.log("function name: displayReverseOrdered");
       displayReverseOrdered();
       break;
     case 11:
+      console.log("function name: displayMultiplicationTable");
       displayMultiplicationTable();
       break;
     case 12:
+      console.log("function name: ");
       console.log(`Further explanantion needed`);
       break;
     case 14:
+      console.log("function name: calcBirthYear");
       calcBirthYear();
       break;
     case 15:
+      console.log("function name: ");
       console.log(`Further explanantion needed`);
       break;
   }
