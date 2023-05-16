@@ -9,7 +9,7 @@
 // 9. Scrie o functie care primeste 3 numere si afiseaza sir crescator cu acele numere.
 // 10. Scrie o functie care primeste 3 numere si afiseaza sir descrescator cu acele numere.
 // 11. Scrie o functie care primeste 1 numar si afiseaza tabla inmultirii pentru acel numar.
-// 12. Scrie o functie care primeste 3 parametrii: nr persoane, locuri disponibile, mese. Aseaza numarul de persoane la mese astfel incat sa nu ramana nici o masa libera, iar la final afiseaza cate locuri libere au ramas (total).
+// 12. Scrie o functie cu params: nr pers, locuri disponibile, nr pers la o masa. In functie de nr de pers si nr de mese, pune nr de pers la mese incat sa ocupi toate mese si afiseaza cate locuri libere si la cate mese au fost asezati au ramas (daca este cazul). Fa o verificare daca nr de pers are sau nu loc in localul respectiv. // 10 pers -> au loc -> asezi la masa, 30 pers -> nu au loc
 // 13. Scrie o functie care primeste 1 singur parametru. Acest parametru defineste care dintre functiile de mai sus este apelata. Afiseaza parametru primit, numele functiei apelate precum si raspunsul acelei functii.
 // 14. Scrie o functie care primeste anul nasterii si calculeaza varsta in functie de anul curent.
 // 15. Scrie o functie care calculeaza anii unui animal de companie dat ca parametru (caine sau pisica / daca alegi si altceva, go for it).
@@ -223,22 +223,30 @@ const displayMultiplicationTable = function (num17) {
 /* ---------------------------------------------------------------------- */
 /*                     12. cate locuri libere la masa                     */
 /* ---------------------------------------------------------------------- */
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+const tableSeating = function (numberOfPeople, availableSeats, tableCapacity) {
+  numberOfPeople = Number(prompt("How many people in your party?"));
+  availableSeats = Number(prompt("How many available seats?"));
+  tableCapacity = Number(prompt("How many people can be seated at one table?"));
+
+  if (numberOfPeople > availableSeats) {
+    console.log("There aren't enough seats available, sorry.");
+  } else if (numberOfPeople == availableSeats) {
+    console.log(
+      `You can be seated. You will occupy ${
+        numberOfPeople / tableCapacity
+      } full tables.`
+    );
+  } else {
+    console.log(
+      `You can be seated. You will occupy ${Math.floor(
+        numberOfPeople / tableCapacity
+      )} fully seated tables and another ${
+        numberOfPeople -
+        Math.floor(numberOfPeople / tableCapacity) * tableCapacity
+      } seats at a partially occupied table.`
+    );
+  }
+};
 
 /* --------------------------------------------------------------------- */
 /*                         14. calc anul nasterii                        */
@@ -336,8 +344,8 @@ const funcSelector = function (selector) {
       displayMultiplicationTable();
       break;
     case 12:
-      console.log("function name: ");
-      console.log(`Further explanantion needed`);
+      console.log("function name: tableSeating");
+      tableSeating();
       break;
     case 14:
       console.log("function name: calcBirthYear");
