@@ -8,7 +8,7 @@ const studenti = {
   student3: { nume: "Mark", varsta: 19 },
   sumAge: function () {
     return console.log(
-      `Suma varstelor celor 3 studenti este: ${
+      `The sum of people's ages in the object is: ${
         studenti.student1.varsta +
         studenti.student2.varsta +
         studenti.student3.varsta
