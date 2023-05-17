@@ -151,14 +151,16 @@ const checkSkills = function () {
     "Type a skill you want to find candidates for (ex. HTML, CSS, JavaScript, etc."
   );
 
-  for (const candidat in candidati) {
-    if (candidati[candidat].calificari.includes(keyWord2))
-      console.log(
-        `${candidati[candidat].nume}, who is ${candidat}, has the skill ${keyWord2} you are looking for.`,
-        true
-      );
-    else console.log(false);
-  }
+  const theOne = Object.keys(candidati).find((key) =>
+    candidati[key].calificari.includes(keyWord2)
+  );
+
+  if (theOne)
+    console.log(
+      `${theOne}, whose name is ${candidati[theOne].nume}, has the skill you want, ${keyWord2} =>`,
+      true
+    );
+  else console.log("There are no candidates with your desired skill =>", false);
 };
 
 // checkSkills();
