@@ -2,22 +2,29 @@ console.log("---------------Exercise 1---------------");
 // Exercițiul 1: Calcularea sumei vârstelor
 // Primești un obiect studenti care conține informații despre studenți, inclusiv numele și vârsta lor.
 // Calculează suma vârstelor tuturor studenților și returnează rezultatul.
+
 const studenti = {
   student1: { nume: "John", varsta: 20 },
   student2: { nume: "Alice", varsta: 22 },
   student3: { nume: "Mark", varsta: 19 },
-  sumAge: function () {
-    return console.log(
-      `The sum of people's ages in the object is: ${
-        studenti.student1.varsta +
-        studenti.student2.varsta +
-        studenti.student3.varsta
-      }`
-    );
-  },
 };
 
-studenti.sumAge();
+const sumAge = function () {
+  // return console.log(
+  //   `The sum of people's ages in the object is: ${
+  //     studenti.student1.varsta +
+  //     studenti.student2.varsta +
+  //     studenti.student3.varsta
+  //   }`
+  // );
+  let sum = 0;
+  for (let student in studenti) {
+    sum += studenti[student].varsta;
+  }
+  return console.log(`The sum of people's ages in the object is: ${sum}`);
+};
+
+sumAge();
 
 console.log("---------------Exercise 2---------------");
 // Exercițiul 2: Concatenarea numelor de familie
