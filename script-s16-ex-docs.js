@@ -9,6 +9,7 @@ const addInArr = function (num) {
   return console.log(`Here's an array with your choices: `, numArr);
 };
 
+console.log("To see the result, un-comment the function call.");
 // addInArr();
 
 console.log("---------------Exercise 2---------------");
@@ -39,6 +40,7 @@ const arrAverage = function (userInput) {
     );
 };
 
+console.log("To see the result, un-comment the function call.");
 // arrAverage();
 
 console.log("---------------Exercise 3---------------");
@@ -72,6 +74,7 @@ const countryDetails = function (userInput) {
   );
 };
 
+console.log("To see the result, un-comment the function call.");
 // countryDetails();
 
 console.log("---------------Exercise 4---------------");
@@ -90,11 +93,33 @@ const pcComponents = [
 
 const pcCost = function () {
   let costArr = [];
+  let detailsArr = [];
+
   for (let i = 0; i < pcComponents.length; i++) {
     costArr.push(pcComponents[i].price * pcComponents[i].qty);
+    detailsArr.push(pcComponents[i].name + ": " + costArr[i]);
   }
 
-  console.log(`${costArr.reduce((acc, cur) => acc + cur)}`);
+  console.log("Here is the list of your PC components and cost:", detailsArr);
+
+  console.log(
+    "The total cost of your system is:",
+    costArr.reduce((acc, cur) => acc + cur)
+  );
 };
 
 pcCost();
+
+console.log("---------------Exercise 5---------------");
+// Scrie un program care primește de la utilizator un array de obiecte reprezentând studenți (cu proprietăți precum nume, vârstă, note) și calculează media notelor pentru fiecare student. Afișează numele și media fiecărui student în consolă.
+const students = [
+  { name: "Student 1", age: 20, grades: [10, 7, 9, 8] },
+  { name: "Student 2", age: 20, grades: [8, 9, 7, 8] },
+  { name: "Student 3", age: 20, grades: [6, 9, 8, 8] },
+];
+
+students.forEach(function (obj) {
+  let gradeSum = obj.grades.reduce((acc, cur) => acc + cur);
+  let gradeAverage = gradeSum / obj.grades.length;
+  console.log(obj.name, "has a grade average of:", gradeAverage);
+});
