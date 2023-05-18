@@ -43,3 +43,58 @@ const arrAverage = function (userInput) {
 
 console.log("---------------Exercise 3---------------");
 // Scrie un program care primește un cod de țară de la utilizator și afișează numele țării respective, împreună cu o listă de capitale asociate. Folosește un obiect pentru a mapa codurile de țară la numele țărilor și la array-uri cu capitalele corespunzătoare.
+const countries = {
+  RO: {
+    name: "Romania",
+    capital: "Bucharest",
+  },
+  ES: {
+    name: "Spain",
+    capital: "Madrid",
+  },
+  UK: {
+    name: "The United Kingdom",
+    capital: "London",
+  },
+  DE: {
+    name: "Germany",
+    capital: "Berlin",
+  },
+};
+
+const countryDetails = function (userInput) {
+  userInput = prompt(
+    "Type in a coutry code (ex. RO, ES, UK, DE)"
+  ).toUpperCase();
+
+  console.log(
+    `The country is ${countries[userInput].name} and its capital city is ${countries[userInput].capital}.`
+  );
+};
+
+// countryDetails();
+
+console.log("---------------Exercise 4---------------");
+// Scrie un program care primește de la utilizator un array de obiecte, fiecare obiect reprezentând un produs (cu proprietăți precum nume, preț, cantitate). Calculează valoarea totală a produselor (preț x cantitate) și o afișează în consolă.
+const pcComponents = [
+  { name: "CPU", price: 400, qty: 1 },
+  { name: "Motherboard", price: 300, qty: 1 },
+  { name: "DRAM", price: 100, qty: 4 },
+  { name: "GPU", price: 1000, qty: 1 },
+  { name: "PSU", price: 200, qty: 1 },
+  { name: "SSD", price: 200, qty: 2 },
+  { name: "AIO", price: 250, qty: 1 },
+  { name: "SysFans", price: 20, qty: 4 },
+  { name: "Case", price: 200, qty: 1 },
+];
+
+const pcCost = function () {
+  let costArr = [];
+  for (let i = 0; i < pcComponents.length; i++) {
+    costArr.push(pcComponents[i].price * pcComponents[i].qty);
+  }
+
+  console.log(`${costArr.reduce((acc, cur) => acc + cur)}`);
+};
+
+pcCost();
