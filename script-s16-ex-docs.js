@@ -104,7 +104,7 @@ const pcCost = function () {
 
   console.log(
     "The total cost of your system is:",
-    costArr.reduce((acc, cur) => acc + cur)
+    costArr.reduce((acc, current) => acc + current)
   );
 };
 
@@ -119,7 +119,7 @@ const students = [
 ];
 
 students.forEach(function (obj) {
-  let gradeSum = obj.grades.reduce((acc, cur) => acc + cur);
+  let gradeSum = obj.grades.reduce((acc, current) => acc + current);
   let gradeAverage = gradeSum / obj.grades.length;
   console.log(obj.name, "has a grade average of:", gradeAverage);
 });
