@@ -68,4 +68,3 @@ const wordLengthFunc = function (chars) {
 };
 
 // wordLengthFunc();
-console.log("----------------------------------------");
