@@ -12,3 +12,10 @@ a {
   color: coral;
   text-transform: uppercase;
 }
+
+.appendedDiv {
+  width: 50px;
+  height: 20px;
+  background-color: coral;
+  margin-top: 25px;
+}
