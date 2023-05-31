@@ -13,9 +13,15 @@ a {
   text-transform: uppercase;
 }
 
+#parentDiv {
+  color: antiquewhite;
+  margin-top: 25px;
+  width: 50px;
+}
+
 .appendedDiv {
   width: 50px;
   height: 20px;
   background-color: coral;
-  margin-top: 25px;
+  margin-top: 10px;
 }

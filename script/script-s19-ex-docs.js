@@ -30,6 +30,19 @@ email.addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
     const div = document.createElement("div");
     div.classList.add("appendedDiv");
-    document.body.appendChild(div);
+    document.getElementById("parentDiv").appendChild(div);
   }
+});
+
+console.log("---------------Exercise 5---------------");
+// Creați un element HTML cu un anumit ID. Adăugați un eveniment de "dblclick" (dublu clic) la acest element. În funcția de tratare a evenimentului de "dblclick", accesați elementul părinte folosind parentNode. Eliminați elementul din DOM folosind removeChild.
+document.addEventListener("keydown", function () {
+  const tempDivs = document.querySelectorAll(".appendedDiv");
+
+  tempDivs.forEach((el) => {
+    el.addEventListener("dblclick", function () {
+      const elParent = el.closest("#parentDiv");
+      elParent.removeChild(el);
+    });
+  });
 });
