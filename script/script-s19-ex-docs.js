@@ -7,3 +7,9 @@ ex1Btn.addEventListener("click", function () {
 
 console.log("---------------Exercise 2---------------");
 // Creați un element HTML cu un anumit ID. Adăugați un eveniment de "mouseover" (trecerea cursorului peste element) la acest element. În funcția de tratare a evenimentului de "mouseover", adăugați o clasă CSS la element folosind classList.add. Adăugați și un eveniment de "mouseout" (ieșirea cursorului din element) la același element. În funcția de tratare a evenimentului de "mouseout", eliminați clasa CSS folosind classList.remove.
+ex1Btn.addEventListener("mouseover", function () {
+  ex1Btn.classList.add("mouseover");
+});
+ex1Btn.addEventListener("mouseout", function () {
+  ex1Btn.classList.remove("mouseover");
+});
