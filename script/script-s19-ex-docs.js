@@ -21,11 +21,12 @@ const myForm = document.getElementById("myForm");
 myForm.addEventListener("submit", function (e) {
   e.preventDefault();
   document.getElementById("title").textContent = "Form submitted!";
-  this.submit();
+  // this.submit();
 });
 
 console.log("---------------Exercise 4---------------");
 // Adăugați un eveniment de "keydown" (apăsarea unei taste) la document. În funcția de tratare a evenimentului de "keydown", verificați dacă tasta apăsată este Enter (cheia cu codul 13). Dacă este apăsată tasta Enter, creați un element nou folosind createElement. Adăugați noul element în DOM folosind appendChild.
+const email = document.getElementById("email");
 email.addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
     const div = document.createElement("div");
