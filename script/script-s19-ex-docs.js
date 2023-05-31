@@ -13,3 +13,13 @@ ex1Btn.addEventListener("mouseover", function () {
 ex1Btn.addEventListener("mouseout", function () {
   ex1Btn.classList.remove("mouseover");
 });
+
+console.log("---------------Exercise 3---------------");
+// Creați un formular HTML cu un buton de submit. Adăugați un eveniment de "submit" la formular. În funcția de tratare a evenimentului de "submit", preveniți comportamentul implicit al formularului folosind event.preventDefault(). Accesați un element din DOM folosind getElementById. Schimbați textul acelui element folosind textContent.
+const myForm = document.getElementById("myForm");
+
+myForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  document.getElementById("title").textContent = "Form submitted!";
+  this.submit();
+});
