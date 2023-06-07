@@ -54,7 +54,7 @@ console.log("---------------Exercise 4---------------");
 
 const interval = setInterval(function () {
   console.log(
-    "This message repeats every 2 seconds and stops after the 3rd loop.."
+    "This message repeats every 2 seconds and stops after the 3rd iteration.."
   );
 }, 2000);
 
@@ -66,7 +66,7 @@ console.log("---------------Exercise 5---------------");
 // Window
 // Afișează în consolă lățimea și înălțimea ferestrei browserului utilizând obiectul window. Utilizează metoda prompt pentru a solicita utilizatorului un nume și afișează un mesaj de salut personalizat într-un element HTML.
 console.log(
-  `Your browser window's dimensions (w x H) are: ${window.innerWidth} x ${window.innerHeight} px.`
+  `Your browser window's dimensions (w x h) are: ${window.innerWidth} x ${window.innerHeight} px.`
 );
 
 const userName = window.prompt("Type your name here:");
