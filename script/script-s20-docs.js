@@ -65,3 +65,13 @@ setTimeout(function () {
 console.log("---------------Exercise 5---------------");
 // Window
 // Afișează în consolă lățimea și înălțimea ferestrei browserului utilizând obiectul window. Utilizează metoda prompt pentru a solicita utilizatorului un nume și afișează un mesaj de salut personalizat într-un element HTML.
+console.log(
+  `Your browser window's dimensions (w x H) are: ${window.innerWidth} x ${window.innerHeight} px.`
+);
+
+const userName = window.prompt("Type your name here:");
+const anotherDiv = document.createElement("div");
+anotherDiv.textContent = userName;
+document.getElementById(
+  "parentDiv2"
+).textContent = `Hello and welcome, ${userName}!`;
