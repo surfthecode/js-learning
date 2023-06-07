@@ -19,7 +19,7 @@ xhr.open(
   "https://my-json-server.typicode.com/typicode/demo/posts",
   false
 );
-
+console.log("With AJAX:");
 xhr.onload = function () {
   if (xhr.status !== 200)
     console.log("Attention required: status not 200, check response status!");
@@ -39,3 +39,29 @@ xhr.send();
 console.log("---------------Exercise 3---------------");
 // Fetch API
 // Utilizează Fetch API pentru a solicita un fișier JSON de la un server și afișează datele acestuia în consolă.
+console.log("With fetch:");
+fetch("https://my-json-server.typicode.com/typicode/demo/posts")
+  .then((response) => response.json())
+  .then((data) =>
+    data.forEach((element) => {
+      console.log(`${element.id} - ${element.title}`);
+    })
+  );
+
+console.log("---------------Exercise 4---------------");
+//   setInterval și setTimeout:
+// Folosind setInterval, afișează în consolă un mesaj care se repetă la fiecare 2 secunde. Apoi, folosind setTimeout, afișează în consolă un mesaj după o întârziere de 3 secunde.
+
+const interval = setInterval(function () {
+  console.log(
+    "This message repeats every 2 seconds and stops after the 3rd loop.."
+  );
+}, 2000);
+
+setTimeout(function () {
+  clearInterval(interval);
+}, 6000);
+
+console.log("---------------Exercise 5---------------");
+// Window
+// Afișează în consolă lățimea și înălțimea ferestrei browserului utilizând obiectul window. Utilizează metoda prompt pentru a solicita utilizatorului un nume și afișează un mesaj de salut personalizat într-un element HTML.
