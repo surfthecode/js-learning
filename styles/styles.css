@@ -13,10 +13,11 @@ a {
   text-transform: uppercase;
 }
 
-#parentDiv {
+#parentDiv,
+#parentDiv2 {
   color: antiquewhite;
   margin-top: 25px;
-  width: 50px;
+  width: 100px;
 }
 
 .appendedDiv {

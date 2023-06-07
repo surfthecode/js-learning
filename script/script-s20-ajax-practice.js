@@ -29,6 +29,19 @@
 
 // Using Fetch API
 
-fetch("https://restcountries.com/v3.1/all")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
+const showCountries = function () {
+  fetch("https://restcountries.com/v3.1/all")
+    .then((response) => response.json())
+    .then((data) =>
+      data.forEach((country) => {
+        const countryCard = document.createElement("div");
+        const countryCardImage = document.createElement("img");
+
+        countryCard.innerHTML = country.name.common;
+        countryCardImage.src = country.flags.svg;
+        countryCard.appendChild(countryCardImage);
+
+        document.getElementById("parentDiv").appendChild(countryCard);
+      })
+    );
+};
