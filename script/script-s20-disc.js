@@ -10,61 +10,64 @@ const flavorDrinkBtn = document.querySelector("#cta-tertiary");
 const ascendingPriceBtn = document.querySelector("#cta-quaternary");
 const drinkSodaBtn = document.querySelector("#cta-quinary");
 
+console.log("------------------AJAX------------------");
 console.log("---------------Exercise 1---------------");
 // 1. Exercițiul 1: Afișarea tuturor băuturilor
 //    - Parcurge fiecare element din fișierul JSON și afișează numele brandului și aroma fiecărei băuturi în div-ul cu id-ul "paragraph".
-btn.addEventListener("click", function () {
-  let xhr = new XMLHttpRequest();
 
-  xhr.open("GET", "./JSON/soda.json", true);
+// btn.addEventListener("click", function () {
+//   let xhr = new XMLHttpRequest();
 
-  xhr.onload = function () {
-    if (xhr.status !== 200) {
-      throw new Error("Error status..");
-    } else {
-      sodas = JSON.parse(this.response);
+//   xhr.open("GET", "./JSON/soda.json", true);
 
-      sodas.forEach((soda) => {
-        const brandName = soda.brand;
-        const flavor = soda.flavor;
-        const newDiv = document.createElement("div");
+//   xhr.onload = function () {
+//     if (xhr.status !== 200) {
+//       throw new Error("Error status..");
+//     } else {
+//       sodas = JSON.parse(this.response);
 
-        newDiv.innerHTML = `Drink ${soda.id}: ${brandName} - flavor: ${flavor}`;
-        newDiv.style.color = "antiquewhite";
+//       sodas.forEach((soda) => {
+//         const brandName = soda.brand;
+//         const flavor = soda.flavor;
+//         const newDiv = document.createElement("div");
 
-        div.appendChild(newDiv);
-      });
-    }
-  };
+//         newDiv.innerHTML = `Drink ${soda.id}: ${brandName} - flavor: ${flavor}`;
+//         newDiv.style.color = "antiquewhite";
 
-  xhr.send();
-});
+//         div.appendChild(newDiv);
+//       });
+//     }
+//   };
+
+//   xhr.send();
+// });
 
 console.log("---------------Exercise 2---------------");
 // 2. Exercițiul 2: Afișarea unei băuturi aleatoare
 //    - Generează un număr aleator între 0 și lungimea array-ului din fișierul JSON.
 //    - Afișează numele brandului și descrierea băuturii alese aleator în div-ul cu id-ul "paragraph".
-randomDrinkBtn.addEventListener("click", function () {
-  let xhr = new XMLHttpRequest();
 
-  xhr.open("GET", "./JSON/soda.json", true);
+// randomDrinkBtn.addEventListener("click", function () {
+//   let xhr = new XMLHttpRequest();
 
-  xhr.onload = function () {
-    if (xhr.status !== 200) {
-      throw new Error("Error status..");
-    } else {
-      sodas = JSON.parse(this.response);
-      let randomNum = Math.floor(Math.random() * sodas.length);
+//   xhr.open("GET", "./JSON/soda.json", true);
 
-      div.innerHTML = `${randomNum + 1}: ${sodas[randomNum].brand} is ${
-        sodas[randomNum].description
-      }.`;
-      div.style.color = "antiquewhite";
-    }
-  };
+//   xhr.onload = function () {
+//     if (xhr.status !== 200) {
+//       throw new Error("Error status..");
+//     } else {
+//       sodas = JSON.parse(this.response);
+//       let randomNum = Math.floor(Math.random() * sodas.length);
 
-  xhr.send();
-});
+//       div.innerHTML = `${randomNum + 1}: ${sodas[randomNum].brand} is ${
+//         sodas[randomNum].description
+//       }.`;
+//       div.style.color = "antiquewhite";
+//     }
+//   };
+
+//   xhr.send();
+// });
 
 console.log("---------------Exercise 3---------------");
 // 3. Exercițiul 3: Afișarea băuturilor cu un anumit gust
@@ -113,34 +116,34 @@ console.log("---------------Exercise 4---------------");
 //    - Sortează array-ul de băuturi în funcție de preț în ordine descrescătoare.
 //    - Afișează numele brandului și prețul fiecărei băuturi în div-ul cu id-ul "paragraph".
 
-ascendingPriceBtn.addEventListener("click", function () {
-  let xhr = new XMLHttpRequest();
+// ascendingPriceBtn.addEventListener("click", function () {
+//   let xhr = new XMLHttpRequest();
 
-  xhr.open("GET", "./JSON/soda.json", true);
+//   xhr.open("GET", "./JSON/soda.json", true);
 
-  xhr.onload = function () {
-    if (xhr.status !== 200) {
-      throw new Error("Error status..");
-    } else {
-      sodas = JSON.parse(this.response);
+//   xhr.onload = function () {
+//     if (xhr.status !== 200) {
+//       throw new Error("Error status..");
+//     } else {
+//       sodas = JSON.parse(this.response);
 
-      sodas.sort((a, b) => a.price - b.price);
+//       sodas.sort((a, b) => a.price - b.price);
 
-      sodas.forEach((soda) => {
-        const brandName = soda.brand;
-        const price = soda.price;
-        const newDiv = document.createElement("div");
+//       sodas.forEach((soda) => {
+//         const brandName = soda.brand;
+//         const price = soda.price;
+//         const newDiv = document.createElement("div");
 
-        newDiv.innerHTML = `${brandName} - price: ${price}`;
-        newDiv.style.color = "antiquewhite";
+//         newDiv.innerHTML = `${brandName} - price: ${price}`;
+//         newDiv.style.color = "antiquewhite";
 
-        div.appendChild(newDiv);
-      });
-    }
-  };
+//         div.appendChild(newDiv);
+//       });
+//     }
+//   };
 
-  xhr.send();
-});
+//   xhr.send();
+// });
 
 console.log("---------------Exercise 5---------------");
 // 5. Exercițiul 5: Actualizarea cantității unei băuturi
@@ -179,3 +182,29 @@ console.log("---------------Exercise 5---------------");
 
 //   xhr.send();
 // });
+
+console.log("----------------Fetch API---------------");
+console.log("---------------Exercise 1---------------");
+// 1. Exercițiul 1: Afișarea tuturor băuturilor
+//    - Utilizează Fetch API pentru a face o cerere GET către fișierul "soda.json".
+//    - Manipulează răspunsul și afișează numele brandului și aroma fiecărei băuturi în div-ul cu id-ul "paragraph".
+
+btn.addEventListener("click", function () {
+  fetch("./JSON/soda.json")
+    .then((response) => response.json())
+    .then((result) => {
+      result.forEach((soda) => {
+        const brandName = soda.brand;
+        const flavor = soda.flavor;
+        const newDiv = document.createElement("div");
+
+        newDiv.innerHTML = `Drink ${soda.id}: ${brandName} - flavor: ${flavor}`;
+        newDiv.style.color = "antiquewhite";
+
+        div.appendChild(newDiv);
+      });
+    })
+    .catch((err) => console.log(err));
+});
+
+console.log("---------------Exercise 2---------------");
