@@ -26,3 +26,31 @@ a {
   background-color: coral;
   margin-top: 10px;
 }
+
+/* .sidebar {
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 8px 16px;
+  color: #2a363b;
+}
+
+.sidebar li a {
+  display: block;
+}
+
+.sidebar li a:hover {
+  background-color: #2a363b;
+} */

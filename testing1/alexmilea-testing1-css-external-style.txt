@@ -1,0 +1,33 @@
+Cand definim stiluri CSS intr-un document extern (metoda preferata), trebuie sa includem calea catre fisierul css extern in antetul paginii html, apoi scriem stilurile pe care le dorim.
+
+1. Creez fisierul style.css
+
+2. Adaug calea catre fisierul css in fisierul html, in head:
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    ...
+    ...
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+
+
+3. Scriu stilurile in fisierul extern css, de ex:
+
+body {
+  background-color: #2a363b;
+}
+
+a {
+  color: antiquewhite;
+  text-decoration: none;
+}
+
+.mouseover {
+  font-size: 20px;
+  color: coral;
+  text-transform: uppercase;
+}
+
+4. Verific faptul ca totul functioneaza conform asteptartilor si enjoy the new styles!

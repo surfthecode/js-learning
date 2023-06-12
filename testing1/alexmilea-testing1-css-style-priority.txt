@@ -1,0 +1,52 @@
+
+Cunoastem 3 tipuri principale de a defini stilurile CSS:
+
+-> Inline: definite direct in elementul HTML pe care vrem sa il stilizam
+-> Internal: definite in head, intr-un tag <style></style>
+-> External: fisiere separate CSS, aplicate paginilor html prin <link> in HTML head
+
+
+
+
+Prioritatea aplicarii stilurilor: best practice este sa avem stiluri definite in fisiere .css separate, insa se pot scrie direct in fisierul html, iar browserul va prioritiza stilul "castigator" care va fi aplicat in pagina in ordinea de mai jos:
+
+1. Inline: suprascriu orice alt stil definit in alt mod - folosim pentru a stiliza rapid un element HTML
+2. Internal: suprascriu stilurile definite extern - folosim pentru a stiliza rapid o pagina
+3. External: modul preferat de a defini stilurile CSS - folosim pentru a stiliza mai multe pagini html
+
+
+
+
+Exemple:
+
+1. Inline: definim culoarea acestui label element:
+<label for="email" style="color: antiquewhite">Email</label>
+
+
+2. Internal: definim border de grosime 1px si culoare red pentru toate elementele de tip 'a' (links) din pagina html
+<head>
+ <style>
+   a {
+   border: 1px solid red;
+  }
+ </style>
+</head>
+
+
+3. External: intr-un fisier, 'style.css', putem stiliza totul separat:
+body {
+  background-color: #2a363b;
+}
+
+a {
+  color: antiquewhite;
+  text-decoration: none;
+}
+
+.mouseover {
+  font-size: 20px;
+  color: coral;
+  text-transform: uppercase;
+}
+
+etc.

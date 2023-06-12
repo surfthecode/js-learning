@@ -1,0 +1,3 @@
+const input = prompt("Type a string:");
+const reverseInput = input.split("").reverse().join("");
+console.log(reverseInput);

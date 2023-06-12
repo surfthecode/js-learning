@@ -1,0 +1,45 @@
+in HTML:
+
+... boilerplate HTML
+
+<body>
+    <div class="sidebar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+</body>
+
+
+
+in CSS:
+
+.sidebar {
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 8px 16px;
+  color: #2a363b;
+}
+
+.sidebar li a {
+  display: block;
+}
+
+.sidebar li a:hover {
+  background-color: #2a363b;
+}

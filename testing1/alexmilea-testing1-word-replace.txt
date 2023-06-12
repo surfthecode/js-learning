@@ -1,0 +1,7 @@
+Pentru a schimba un cuvant specific intr-un string in JS, putem folosi metoda replace(), care este o metoda pentru stringuri pe caer o aplicam pe un string si care returneaza un nou string cu schimbarea ceruta. De ex:
+
+const str = "Hello world!";
+const newStr = str.replace("world", "universe");
+console.log(newStr); // Output: "Hello universe!"
+
+Daca in output ni se returneaza acelasi string, inseamna ca, cuvantul cautat nu exista in stringul original.
