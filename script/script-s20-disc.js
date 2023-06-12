@@ -7,6 +7,7 @@ const div = document.querySelector(".paragraph");
 const randomDrinkBtn = document.querySelector("#cta-secondary");
 const flavor = document.querySelector(".flavor");
 const flavorDrinkBtn = document.querySelector("#cta-tertiary");
+const ascendingPriceBtn = document.querySelector("#cta-quaternary");
 
 console.log("---------------Exercise 1---------------");
 // 1. Exercițiul 1: Afișarea tuturor băuturilor
@@ -68,12 +69,50 @@ console.log("---------------Exercise 3---------------");
 // 3. Exercițiul 3: Afișarea băuturilor cu un anumit gust
 //    - Cere utilizatorului să introducă un gust specific într-un prompt.
 //    - Parcurge fiecare băutură din fișierul JSON și afișează numele brandului și descrierea băuturilor care au gustul introdus de utilizator în div-ul cu id-ul "paragraph".
-const input = prompt(
-  "Choose a flavor from the list: Cola / Portocală / Lămâie"
-);
-flavor.innerHTML = input;
 
-flavorDrinkBtn.addEventListener("click", function () {
+// const input = prompt(
+//   "Choose a flavor from the list: Cola / Portocală / Lămâie"
+// );
+// flavor.innerHTML = input;
+
+// flavorDrinkBtn.addEventListener("click", function () {
+//   let xhr = new XMLHttpRequest();
+
+//   xhr.open("GET", "./JSON/soda.json", true);
+
+//   xhr.onload = function () {
+//     if (xhr.status !== 200) {
+//       throw new Error("Error status..");
+//     } else {
+//       sodas = JSON.parse(this.response);
+
+//       sodas.forEach((soda) => {
+//         if (input.toLowerCase() === soda.flavor.toLowerCase()) {
+//           const brandName = soda.brand;
+//           const description = soda.description;
+//           const newDiv = document.createElement("div");
+
+//           newDiv.innerHTML = `Drink ${soda.id}: ${brandName} - ${description}`;
+//           newDiv.style.color = "antiquewhite";
+
+//           div.appendChild(newDiv);
+//         } else
+//           console.log(
+//             "We don't have any drinks with your preferred flavor. Please choose a flavor from the list.."
+//           );
+//       });
+//     }
+//   };
+
+//   xhr.send();
+// });
+
+console.log("---------------Exercise 4---------------");
+// 4. Exercițiul 4: Afișarea băuturilor în ordine descrescătoare după preț
+//    - Sortează array-ul de băuturi în funcție de preț în ordine descrescătoare.
+//    - Afișează numele brandului și prețul fiecărei băuturi în div-ul cu id-ul "paragraph".
+
+ascendingPriceBtn.addEventListener("click", function () {
   let xhr = new XMLHttpRequest();
 
   xhr.open("GET", "./JSON/soda.json", true);
@@ -84,23 +123,26 @@ flavorDrinkBtn.addEventListener("click", function () {
     } else {
       sodas = JSON.parse(this.response);
 
+      sodas.sort((a, b) => a.price - b.price);
+
       sodas.forEach((soda) => {
-        if (input.toLowerCase() === soda.flavor.toLowerCase()) {
-          const brandName = soda.brand;
-          const description = soda.description;
-          const newDiv = document.createElement("div");
+        const brandName = soda.brand;
+        const price = soda.price;
+        const newDiv = document.createElement("div");
 
-          newDiv.innerHTML = `Drink ${soda.id}: ${brandName} - ${description}`;
-          newDiv.style.color = "antiquewhite";
+        newDiv.innerHTML = `${brandName} - price: ${price}`;
+        newDiv.style.color = "antiquewhite";
 
-          div.appendChild(newDiv);
-        } else
-          console.log(
-            "We don't have any drinks with your preferred flavor. Please choose a flavor from the list.."
-          );
+        div.appendChild(newDiv);
       });
     }
   };
 
   xhr.send();
 });
+
+console.log("---------------Exercise 5---------------");
+// 5. Exercițiul 5: Actualizarea cantității unei băuturi
+//    - Cere utilizatorului să introducă un ID de băutură într-un prompt.
+//    - Găsește băutura corespunzătoare în fișierul JSON și scade valoarea 10 din cantitatea disponibilă.
+//    - Afișează un mesaj în div-ul cu id-ul "paragraph" care să confirme actualizarea cantității.
