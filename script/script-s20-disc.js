@@ -8,6 +8,7 @@ const randomDrinkBtn = document.querySelector("#cta-secondary");
 const flavor = document.querySelector(".flavor");
 const flavorDrinkBtn = document.querySelector("#cta-tertiary");
 const ascendingPriceBtn = document.querySelector("#cta-quaternary");
+const drinkSodaBtn = document.querySelector("#cta-quinary");
 
 console.log("---------------Exercise 1---------------");
 // 1. Exercițiul 1: Afișarea tuturor băuturilor
@@ -146,3 +147,35 @@ console.log("---------------Exercise 5---------------");
 //    - Cere utilizatorului să introducă un ID de băutură într-un prompt.
 //    - Găsește băutura corespunzătoare în fișierul JSON și scade valoarea 10 din cantitatea disponibilă.
 //    - Afișează un mesaj în div-ul cu id-ul "paragraph" care să confirme actualizarea cantității.
+// const input2 = Number(
+//   prompt(
+//     "Choose a soda to drink:\n1 - Cola\n2 - Pepsi\n3 - Fanta\n4 - Sprite\nType the number to proceed.."
+//   )
+// );
+
+// drinkSodaBtn.addEventListener("click", function () {
+//   let xhr = new XMLHttpRequest();
+
+//   xhr.open("GET", "./JSON/soda.json", true);
+
+//   xhr.onload = function () {
+//     if (xhr.status !== 200) {
+//       throw new Error("Error status..");
+//     } else {
+//       sodas = JSON.parse(this.response);
+
+//       sodas.forEach((soda) => {
+//         if (input2 === soda.id) {
+//           soda.quantity -= 10;
+//           div.innerHTML = `You drank a ${soda.brand} and the remaining qty. of soda is ${soda.quantity}`;
+//           div.style.color = "antiquewhite";
+//         }
+//       });
+//     }
+//   };
+
+//   // NOT updating the JSON file
+//   // xhr.send(JSON.stringify(sodas));
+
+//   xhr.send();
+// });
