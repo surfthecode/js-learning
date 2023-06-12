@@ -5,6 +5,8 @@
 const btn = document.querySelector("#cta-primary");
 const div = document.querySelector(".paragraph");
 const randomDrinkBtn = document.querySelector("#cta-secondary");
+const flavor = document.querySelector(".flavor");
+const flavorDrinkBtn = document.querySelector("#cta-tertiary");
 
 console.log("---------------Exercise 1---------------");
 // 1. Exercițiul 1: Afișarea tuturor băuturilor
@@ -66,4 +68,39 @@ console.log("---------------Exercise 3---------------");
 // 3. Exercițiul 3: Afișarea băuturilor cu un anumit gust
 //    - Cere utilizatorului să introducă un gust specific într-un prompt.
 //    - Parcurge fiecare băutură din fișierul JSON și afișează numele brandului și descrierea băuturilor care au gustul introdus de utilizator în div-ul cu id-ul "paragraph".
-const input = prompt("Chose a flavor from the list: Cola / Portocală / Lămâie");
+const input = prompt(
+  "Choose a flavor from the list: Cola / Portocală / Lămâie"
+);
+flavor.innerHTML = input;
+
+flavorDrinkBtn.addEventListener("click", function () {
+  let xhr = new XMLHttpRequest();
+
+  xhr.open("GET", "./JSON/soda.json", true);
+
+  xhr.onload = function () {
+    if (xhr.status !== 200) {
+      throw new Error("Error status..");
+    } else {
+      sodas = JSON.parse(this.response);
+
+      sodas.forEach((soda) => {
+        if (input.toLowerCase() === soda.flavor.toLowerCase()) {
+          const brandName = soda.brand;
+          const description = soda.description;
+          const newDiv = document.createElement("div");
+
+          newDiv.innerHTML = `Drink ${soda.id}: ${brandName} - ${description}`;
+          newDiv.style.color = "antiquewhite";
+
+          div.appendChild(newDiv);
+        } else
+          console.log(
+            "We don't have any drinks with your preferred flavor. Please choose a flavor from the list.."
+          );
+      });
+    }
+  };
+
+  xhr.send();
+});
