@@ -208,3 +208,6 @@ btn.addEventListener("click", function () {
 });
 
 console.log("---------------Exercise 2---------------");
+// 2. Exercițiul 2: Afișarea unei băuturi aleatoare
+//    - Utilizează Fetch API pentru a face o cerere GET către fișierul "soda.json".
+//    - Manipulează răspunsul și afișează numele brandului și descrierea unei băuturi aleatoare în div-ul cu id-ul "paragraph".
