@@ -105,46 +105,62 @@ const stocks = {
 /* --------------------------------------------------------------------- */
 /*                   Create ice cream using Async Await                  */
 /* --------------------------------------------------------------------- */
-const isShopOpen = true;
+// const isShopOpen = true;
 
-function time(ms) {
-  return new Promise((resolve, reject) => {
-    if (isShopOpen) {
-      setTimeout(resolve, ms);
-    } else {
-      reject(console.log("Ice cream shop is closed."));
-    }
+// function time(ms) {
+//   return new Promise((resolve, reject) => {
+//     if (isShopOpen) {
+//       setTimeout(resolve, ms);
+//     } else {
+//       reject(console.log("Ice cream shop is closed."));
+//     }
+//   });
+// }
+
+// async function kitchen() {
+//   try {
+//     await time(2000);
+//     console.log(`${stocks.Fruits[0]} ice cream was selected`);
+
+//     await time(0000);
+//     console.log("   Production started...");
+
+//     await time(2000);
+//     console.log("   The fruit has been chopped");
+
+//     await time(1000);
+//     console.log(`   Added ${stocks.liquid[0]} and ${stocks.liquid[1]}`);
+
+//     await time(1000);
+//     console.log("   Started the machine");
+
+//     await time(2000);
+//     console.log(`   Ice cream dispensed on a ${stocks.holder[0]}`);
+
+//     await time(3000);
+//     console.log(`   Selected topping: ${stocks.toppings[0]}`);
+
+//     await time(2000);
+//     console.log("-> Ice cream served");
+//   } catch (error) {
+//     console.log("Customer left.", error);
+//   }
+// }
+
+// kitchen();
+
+/* --------------------------------------------------------------------- */
+/*                             ASYNC practice                            */
+/* --------------------------------------------------------------------- */
+
+async function start() {
+  const data = await fetch("./JSON/soda.json");
+  console.log(data);
+  const result = await data.json();
+  console.log(result);
+  result.forEach((soda) => {
+    console.log(soda);
   });
 }
 
-async function kitchen() {
-  try {
-    await time(2000);
-    console.log(`${stocks.Fruits[0]} ice cream was selected`);
-
-    await time(0000);
-    console.log("   Production started...");
-
-    await time(2000);
-    console.log("   The fruit has been chopped");
-
-    await time(1000);
-    console.log(`   Added ${stocks.liquid[0]} and ${stocks.liquid[1]}`);
-
-    await time(1000);
-    console.log("   Started the machine");
-
-    await time(2000);
-    console.log(`   Ice cream dispensed on a ${stocks.holder[0]}`);
-
-    await time(3000);
-    console.log(`   Selected topping: ${stocks.toppings[0]}`);
-
-    await time(2000);
-    console.log("-> Ice cream served");
-  } catch (error) {
-    console.log("Customer left.", error);
-  }
-}
-
-kitchen();
+start();
