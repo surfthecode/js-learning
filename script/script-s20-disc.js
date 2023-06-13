@@ -10,7 +10,7 @@ const flavorDrinkBtn = document.querySelector("#cta-tertiary");
 const ascendingPriceBtn = document.querySelector("#cta-quaternary");
 const drinkSodaBtn = document.querySelector("#cta-quinary");
 
-console.log("------------------AJAX------------------");
+console.log("                  AJAX                  ");
 console.log("---------------Exercise 1---------------");
 // 1. Exercițiul 1: Afișarea tuturor băuturilor
 //    - Parcurge fiecare element din fișierul JSON și afișează numele brandului și aroma fiecărei băuturi în div-ul cu id-ul "paragraph".
@@ -183,7 +183,7 @@ console.log("---------------Exercise 5---------------");
 //   xhr.send();
 // });
 
-console.log("----------------Fetch API---------------");
+console.log("                Fetch API               ");
 console.log("---------------Exercise 1---------------");
 // 1. Exercițiul 1: Afișarea tuturor băuturilor
 //    - Utilizează Fetch API pentru a face o cerere GET către fișierul "soda.json".
@@ -266,3 +266,27 @@ console.log("---------------Exercise 4---------------");
 //    - Utilizează Fetch API pentru a face o cerere GET către fișierul "soda.json".
 //    - Manipulează răspunsul și sortează array-ul de băuturi în funcție de preț în ordine descrescătoare.
 //    - Afișează numele brandului și prețul fiecărei băuturi în div-ul cu id-ul "paragraph".
+ascendingPriceBtn.addEventListener("click", function () {
+  fetch("./JSON/soda.json")
+    .then((response) => response.json())
+    .then((result) => {
+      result.sort((a, b) => a.price - b.price);
+      result.forEach((soda) => {
+        const brandName = soda.brand;
+        const price = soda.price;
+        const newDiv = document.createElement("div");
+
+        newDiv.innerHTML = `${brandName} - price: ${price}`;
+        newDiv.style.color = "antiquewhite";
+
+        div.appendChild(newDiv);
+      });
+    });
+});
+
+console.log("---------------Exercise 5---------------");
+// 5. Exercițiul 5: Actualizarea cantității unei băuturi
+//    - Cere utilizatorului să introducă un ID de băutură într-un prompt.
+//    - Utilizează Fetch API pentru a face o cerere GET către fișierul "soda.json".
+//    - Manipulează răspunsul și găsește băutura corespunzătoare ID-ului introdus.
+//    - Scade valoarea 10 din cantitatea disponibilă și afișează un mesaj în div-ul cu id-ul "paragraph" care să confirme actualizarea cantității.
