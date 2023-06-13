@@ -211,3 +211,19 @@ console.log("---------------Exercise 2---------------");
 // 2. Exercițiul 2: Afișarea unei băuturi aleatoare
 //    - Utilizează Fetch API pentru a face o cerere GET către fișierul "soda.json".
 //    - Manipulează răspunsul și afișează numele brandului și descrierea unei băuturi aleatoare în div-ul cu id-ul "paragraph".
+randomDrinkBtn.addEventListener("click", function () {
+  fetch("./JSON/soda.json")
+    .then((response) => response.json())
+    .then((result) => {
+      result.forEach((soda) => {
+        const brandName = soda.brand;
+        const description = soda.description;
+        const newDiv = document.createElement("div");
+
+        newDiv.innerHTML = `${brandName}: ${description}`;
+        newDiv.style.color = "antiquewhite";
+
+        div.appendChild(newDiv);
+      });
+    });
+});
