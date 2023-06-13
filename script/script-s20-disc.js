@@ -290,3 +290,28 @@ console.log("---------------Exercise 5---------------");
 //    - Utilizează Fetch API pentru a face o cerere GET către fișierul "soda.json".
 //    - Manipulează răspunsul și găsește băutura corespunzătoare ID-ului introdus.
 //    - Scade valoarea 10 din cantitatea disponibilă și afișează un mesaj în div-ul cu id-ul "paragraph" care să confirme actualizarea cantității.
+const input2 = Number(
+  prompt(
+    "Choose a soda to drink:\n1 - Cola\n2 - Pepsi\n3 - Fanta\n4 - Sprite\nType the number to proceed.."
+  )
+);
+
+drinkSodaBtn.addEventListener("click", function () {
+  fetch("./JSON/soda.json")
+    .then((response) => response.json())
+    .then((result) => {
+      result.forEach((soda) => {
+        if (input2 === soda.id) {
+          soda.quantity -= 10;
+
+          div.innerHTML = `You drank a ${soda.brand} and the remaining qty. of soda is ${soda.quantity}`;
+
+          div.style.color = "antiquewhite";
+        } else {
+          div.innerHTML =
+            "We couldn't find your choice of drink. Please choose a number from the list..";
+          div.style.color = "antiquewhite";
+        }
+      });
+    });
+});
