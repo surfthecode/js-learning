@@ -227,3 +227,42 @@ randomDrinkBtn.addEventListener("click", function () {
       });
     });
 });
+
+console.log("---------------Exercise 3---------------");
+// 3. Exercițiul 3: Afișarea băuturilor cu un anumit gust
+//    - Cere utilizatorului să introducă un gust specific într-un prompt.
+//    - Utilizează Fetch API pentru a face o cerere GET către fișierul "soda.json".
+//    - Manipulează răspunsul și afișează numele brandului și descrierea băuturilor care au gustul introdus de utilizator în div-ul cu id-ul "paragraph".
+
+// const input = prompt(
+//   "Choose a flavor from the list: Cola / Portocală / Lămâie"
+// );
+// flavor.innerHTML = input;
+
+// flavorDrinkBtn.addEventListener("click", function () {
+//   fetch("./JSON/soda.json")
+//     .then((response) => response.json())
+//     .then((result) => {
+//       result.forEach((soda) => {
+//         if (input.toLowerCase() === soda.flavor.toLowerCase()) {
+//           const brandName = soda.brand;
+//           const description = soda.description;
+//           const newDiv = document.createElement("div");
+
+//           newDiv.innerHTML = `Drink ${soda.id}: ${brandName} - ${description}`;
+//           newDiv.style.color = "antiquewhite";
+
+//           div.appendChild(newDiv);
+//         } else
+//           console.log(
+//             "We don't have any drinks with your preferred flavor. Please choose a flavor from the list.."
+//           );
+//       });
+//     });
+// });
+
+console.log("---------------Exercise 4---------------");
+// 4. Exercițiul 4: Afișarea băuturilor în ordine descrescătoare după preț
+//    - Utilizează Fetch API pentru a face o cerere GET către fișierul "soda.json".
+//    - Manipulează răspunsul și sortează array-ul de băuturi în funcție de preț în ordine descrescătoare.
+//    - Afișează numele brandului și prețul fiecărei băuturi în div-ul cu id-ul "paragraph".
