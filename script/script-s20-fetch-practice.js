@@ -31,3 +31,19 @@ async function getData2() {
 }
 
 getData2();
+
+// ------------------------------------------------------------------------
+
+async function getData3() {
+  fetch("https://random.dog/woof.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const dogImage = document.createElement("img");
+      dogImage.src = data.url;
+      document.body.appendChild(dogImage);
+      dogImage.style.width = "300px";
+    })
+    .catch((error) => console.error(error));
+}
+
+getData3();
